@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form  action="/ind_blog", method='GET' >
+        <h1> {{ title }} </h1>
+        
+    <div>
+        <h2>{{ ind_blog.title }}  </h2> 
+        <p>{{ ind_blog.body }}</p>
+             
+    </div>
+
+    </form>
+
+
+{% endblock %}
