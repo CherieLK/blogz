@@ -2,18 +2,33 @@
 <html>
     <head>
         <title>Blog</title>
+        <a href="/">Home Page</a>  &nbsp; &nbsp; &nbsp; 
         <a href="/blog_list">Main Blog Page</a>  &nbsp; &nbsp; &nbsp;
         <a href="/new_post">Add a Blog Entry</a> &nbsp; &nbsp; &nbsp;
         <a href="/login">Login to Blogz</a> &nbsp; &nbsp; &nbsp;
-        <a href="/signup">Create Login</a><br>
+        <a href="/signup">Create Login</a> &nbsp; &nbsp; &nbsp;
+        <a href="/logout">Logout</a><br>
 
         <style type="text/css">
             h1 {
                 text-align: center
                 }
+            .error {
+                color: red;
+                }
         </style>
+
     </head>
     <body>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            <ul>
+            {% for category,message in messages %} <!--category is the second thing in the flash-->
+                <li class="{{category}}">{{message}}</li>
+            {% endfor %} <!--for loop and list(ul) lists all message-->
+            </ul>
+        {% endwith %} <!--with block captures messages send from flash-->
+    
         
         {% block content %}
         {% endblock %}

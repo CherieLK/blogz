@@ -5,12 +5,20 @@
     <form  action="/ind_blog", method='GET' >
         <h1> {{ title }} </h1>
         
-    <div>
-        <h2>{{ ind_blog.title }}  </h2> 
-        <p>{{ ind_blog.body }}</p>
+        <ul>
+    
+            <li>
+                <h2> {{ ind_blog.title }} </h2>
+                <p></p>
+                <p></p>
+                {{ ind_blog.body }}  
              
-    </div>
-
+            </li>
+            
+        
+        <p></p>
+        <p>written by <a href="/blog_list?authorid={{ind_blog.owner.id}}">{{ind_blog.owner.username}}</a></p>
+        </ul>
     </form>
 
 
